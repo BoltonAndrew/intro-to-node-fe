@@ -7,7 +7,7 @@ function AddItem({ setNewEntry }) {
 
   async function createItem(event) {
     event.preventDefault();
-    const response = await fetch(`http://localhost:5001/item`, {
+    const response = await fetch(`${import.meta.env.VITE_REST_API}/item`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

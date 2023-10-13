@@ -8,7 +8,10 @@ function App() {
 
   async function getDatabase() {
     try {
-      const response = await fetch("http://localhost:5001/item/multiple");
+      const response = await fetch(
+        `${import.meta.env.VITE_REST_API}item/multiple`
+      );
+      console.log(import.meta.VITE_REST_API);
       const data = await response.json();
       console.log(data);
       setItems(data);
